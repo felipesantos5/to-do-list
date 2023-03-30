@@ -1,32 +1,56 @@
-import React, { useState } from "react";
-import "./App.css";
+import React, { useState, useEffect } from "react";
+import Swal from "sweetalert2";
+import "./styles/reset.css";
+import "./styles/app.css";
+import "boxicons";
 
-function App() {
-  const [task, setTask] = useState("");
-  const [lisTask, setListTask] = useState([]);
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
-  const addTask = () => {
-    if (!task) {
-      alert("write a task");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (inputValue.trim() !== "") {
+      setTodos([...todos, inputValue]);
+      setInputValue("");
     } else {
-      console.log("foi");
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong!",
+        text: "Please write a task",
+      });
     }
-    setTask("");
+  };
+
+  const handleDelete = (index) => {
+    setTodos(todos.filter((_, i) => i !== index));
   };
 
   return (
-    <div className="App">
-      <h1>To do list</h1>
+    <main className="paper">
+      <h1>TO DO LIST</h1>
 
-      <div>
-        <input className="input" placeholder="Task" value={task} onChange={(event) => setTask(event.target.value)} />
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Add a new task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
 
-        <button onClick={addTask}>send</button>
-      </div>
+        <button className="button-submit" type="submit">
+          Add
+        </button>
+      </form>
 
-      <p>{task} oi</p>
-    </div>
+      <ul className="content">
+        {todos.map((todo, index) => (
+          <li key={index} className="card">
+            <p>{todo}</p>
+            <div className="icons">
+              <box-icon size="md" className="icon" name="trash-alt" type="solid" onClick={() => handleDelete(index)}></box-icon>
+              <box-icon size="md" type="solid" name="check-square"></box-icon>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
-export default App;
+export default TodoList;
