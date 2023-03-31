@@ -123,3 +123,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+* {
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  background-color: lightgrey;
+  margin-top: 24px;
+}
