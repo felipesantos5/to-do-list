@@ -1,57 +1,72 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./styles/reset.css";
-import "boxicons";
-import { Paper, Card, Title, Form, Content, Icons } from "./styles/GlobalStyles";
+import { Paper, Card, Title, Form, Content, Icons } from "./styles";
 
-function TodoList(props) {
-  const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+function TodoList() {
+  const [task, setTask] = useState("");
+  const [listTask, setListTask] = useState([]);
+  const [xp, setXp] = useState();
+  const [xpbar, setXpBar] = useState();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (inputValue.trim() !== "") {
-      setTodos([...todos, inputValue]);
-      setInputValue("");
-    } else {
+  const handleSubmit = () => {
+    if (!task) {
       Swal.fire({
-        icon: "error",
+        con: "error",
         title: "Something went wrong!",
         text: "Please write a task",
       });
+    } else {
+      const newTask = {
+        id: Math.random(),
+        task: task,
+        checked: false,
+        xp: 10,
+      };
+      setListTask([...listTask, newTask]);
+      setTask("");
     }
   };
 
-  const handleDelete = (index) => {
-    setTodos(todos.filter((_, i) => i !== index));
+  const handleDelete = (id) => {
+    const newList = listTask.filter((task) => task.id !== id);
+    setListTask(newList);
+  };
+
+  const toggleChecked = (id, checked) => {
+    const index = listTask.findIndex((task) => task.id === id);
+    const newList = listTask;
+    newList[index].checked = !checked;
+    setListTask([...newList]);
   };
 
   return (
     <Paper>
       <Title>TO DO LIST</Title>
 
-      <Form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Add a new task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+      <Form>
+        <input type="text" placeholder="Add a new task" value={task} onChange={(event) => setTask(event.target.value)} />
 
-        <button className="button-submit" type="submit">
+        <button className="button-submit" type="submit" onClick={handleSubmit}>
           Add
         </button>
       </Form>
 
       <Content>
-        {todos.map((todo, index) => (
-          <Card key={index} className="card" checked={true}>
-            <p>{todo}</p>
-            <Icons>
-              <button>
-                <box-icon size="md" className="icon" name="check-square" type="solid"></box-icon>
-              </button>
-              <button>
-                <box-icon size="md" className="icon" name="trash-alt" type="solid" onClick={() => handleDelete(index)}></box-icon>
-              </button>
-            </Icons>
-          </Card>
+        {listTask.map((task) => (
+          <>
+            <Card key={task.id} Item checked={task.checked}>
+              <p>{task.task}</p>
+              <Icons>
+                <button className="button-icon" onClick={() => toggleChecked(task.id, task.checked)}>
+                  <i className="bx bxs-check-square icon"></i>
+                </button>
+                <button className="button-icon">
+                  <i className="bx bxs-trash-alt icon" onClick={() => handleDelete(task.id)}></i>
+                </button>
+              </Icons>
+            </Card>
+          </>
         ))}
       </Content>
     </Paper>
