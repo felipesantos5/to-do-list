@@ -87,7 +87,7 @@ export const Card = styled.li`
   padding: 20px;
 
   p {
-    max-width: 350px;
+    max-width: 320px;
     word-wrap: break-word;
   }
 
