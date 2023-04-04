@@ -23,6 +23,11 @@ export const Paper = styled.main`
   mix-blend-mode: normal;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+
+  @media (max-width: 400px) {
+    padding: 22px 0;
+    height: 100vh;
+  }
 `;
 
 export const Title = styled.h1`
@@ -30,6 +35,14 @@ export const Title = styled.h1`
   margin-bottom: 22px;
   font-weight: 800;
   font-family: "Roboto", sans-serif;
+
+  @media (max-width: 350px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 260px) {
+    font-size: 32px;
+  }
 `;
 
 export const Form = styled.div`
@@ -90,7 +103,7 @@ export const Form = styled.div`
     }
   }
 
-  @media (max-width: 290px) {
+  @media (max-width: 260px) {
     input::placeholder {
       font-size: 24px;
     }
