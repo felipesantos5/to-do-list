@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  margin: 22px 24px;
+
+  @media (max-width: 400px) {
+    margin: 0;
+  }
+`;
+
 export const Paper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 500px;
+  max-width: 500px;
   min-height: 700px;
   padding: 22px;
   margin: auto;
@@ -66,6 +74,21 @@ export const Form = styled.div`
       opacity: 0.6;
     }
   }
+
+  @media (max-width: 545px) {
+    flex-direction: column;
+    gap: 16px;
+
+    input {
+      width: 100%;
+      padding: 0;
+      height: 60px;
+    }
+
+    .button-submit {
+      width: 100%;
+    }
+  }
 `;
 
 export const Card = styled.li`
@@ -88,10 +111,23 @@ export const Card = styled.li`
   padding: 22px;
 
   p {
-    max-width: 320px;
+    max-width: 75%;
     word-wrap: break-word;
     color: ${(props) => (props.checked ? "#FFFFFF" : "#111")};
     text-decoration: ${(props) => (props.checked ? "line-through" : "none")};
+  }
+
+  @media (max-width: 680px) {
+    /* p {
+      max-width: 280px;
+    } */
+  }
+
+  @media (max-width: 540px) {
+    flex-direction: column;
+    /* p {
+      max-width: 80%;
+    } */
   }
 `;
 
