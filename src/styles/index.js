@@ -38,7 +38,7 @@ export const Form = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 
   input {
     width: 224px;
@@ -89,6 +89,12 @@ export const Form = styled.div`
       width: 100%;
     }
   }
+
+  @media (max-width: 290px) {
+    input::placeholder {
+      font-size: 24px;
+    }
+  }
 `;
 
 export const Card = styled.li`
@@ -117,17 +123,8 @@ export const Card = styled.li`
     text-decoration: ${(props) => (props.checked ? "line-through" : "none")};
   }
 
-  @media (max-width: 680px) {
-    /* p {
-      max-width: 280px;
-    } */
-  }
-
   @media (max-width: 540px) {
     flex-direction: column;
-    /* p {
-      max-width: 80%;
-    } */
   }
 `;
 
@@ -147,6 +144,21 @@ export const Icons = styled.div`
 
   i {
     font-size: 36px;
+  }
+
+  @media (max-width: 540px) {
+    margin: 0;
+  }
+
+  @media (max-width: 150px) {
+    .button-icon {
+      width: 24px;
+      height: 14px;
+    }
+
+    i {
+      font-size: 24px;
+    }
   }
 `;
 
