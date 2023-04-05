@@ -58,10 +58,11 @@ export const Form = styled.div`
     height: 40px;
 
     text-align: center;
+    font-weight: 700;
 
     padding: 8px 24px;
 
-    background: #ffffff;
+    background: #f5f5f5;
     mix-blend-mode: normal;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
@@ -71,6 +72,8 @@ export const Form = styled.div`
   .button-submit {
     height: 60px;
     width: 124px;
+
+    font-weight: 700;
 
     background: #7066e0;
     mix-blend-mode: normal;
@@ -138,6 +141,7 @@ export const Card = styled.li`
 
   @media (max-width: 540px) {
     flex-direction: column;
+    gap: 14px;
   }
 `;
 

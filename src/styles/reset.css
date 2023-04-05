@@ -126,10 +126,10 @@ table {
 
 * {
   font-size: 28px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
 }
 
 body {
   background-color: lightgrey;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 700 !important;
 }
