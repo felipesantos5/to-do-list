@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./styles/reset.css";
-import { Paper, Card, Title, Form, Content, Icons } from "./styles";
+import { Paper, Card, Title, Form, Content, Icons, Wrapper } from "./styles";
 
 function TodoList() {
   const [task, setTask] = useState("");
   const [listTask, setListTask] = useState([]);
-  const [xp, setXp] = useState();
-  const [xpbar, setXpBar] = useState();
+  // const [xp, setXp] = useState();
+  // const [xpbar, setXpBar] = useState();
 
   const handleSubmit = () => {
     if (!task) {
@@ -41,35 +41,37 @@ function TodoList() {
   };
 
   return (
-    <Paper>
-      <Title>TO DO LIST</Title>
+    <Wrapper>
+      <Paper>
+        <Title>TO DO LIST</Title>
 
-      <Form>
-        <input type="text" placeholder="Add a new task" value={task} onChange={(event) => setTask(event.target.value)} />
+        <Form>
+          <input type="text" placeholder="Add a new task" value={task} onChange={(event) => setTask(event.target.value)} />
 
-        <button className="button-submit" type="submit" onClick={handleSubmit}>
-          Add
-        </button>
-      </Form>
+          <button className="button-submit" type="submit" onClick={handleSubmit}>
+            Add
+          </button>
+        </Form>
 
-      <Content>
-        {listTask.map((task) => (
-          <>
-            <Card key={task.id} Item checked={task.checked}>
-              <p>{task.task}</p>
-              <Icons>
-                <button className="button-icon" onClick={() => toggleChecked(task.id, task.checked)}>
-                  <i className="bx bxs-check-square icon"></i>
-                </button>
-                <button className="button-icon">
-                  <i className="bx bxs-trash-alt icon" onClick={() => handleDelete(task.id)}></i>
-                </button>
-              </Icons>
-            </Card>
-          </>
-        ))}
-      </Content>
-    </Paper>
+        <Content>
+          {listTask.map((task) => (
+            <>
+              <Card key={task.id} Item checked={task.checked}>
+                <p>{task.task}</p>
+                <Icons>
+                  <button className="button-icon" onClick={() => toggleChecked(task.id, task.checked)}>
+                    <i className="bx bxs-check-square icon"></i>
+                  </button>
+                  <button className="button-icon">
+                    <i className="bx bxs-trash-alt icon" onClick={() => handleDelete(task.id)}></i>
+                  </button>
+                </Icons>
+              </Card>
+            </>
+          ))}
+        </Content>
+      </Paper>
+    </Wrapper>
   );
 }
 
