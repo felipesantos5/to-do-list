@@ -1,25 +1,21 @@
-# To-Do List com React e Styled Components
+### **To-Do List with React and Styled Components**
 
-**Este é um aplicativo de lista de tarefas simples criado com React e Styled Components.**
+This is a simple to-do list app created with **React** and **Styled Components**.
 
-### Como executar
+### **`How to run`**
 
-Para executar este aplicativo localmente, você precisará do Node.js instalado em sua máquina. Siga as etapas abaixo:
+To run this app locally, you will need Node.js installed on your machine. Follow the steps below:
 
-Clone este repositório para sua máquina local.
+Clone this repository to your local machine.
 
-Abra o terminal e navegue até o diretório raiz do aplicativo.
+Open the terminal and navigate to the root directory of the app.
 
-Execute npm install para instalar as dependências.
+Run **npm install** to install the dependencies.
 
-Execute npm start para iniciar o aplicativo.
+Run **npm start to** start the app.
 
-Abra o navegador em http://localhost:3000 para visualizar o aplicativo.
+Open your browser at http://localhost:3000 to view the app.
 
-### Como usar
+### `How to use`
 
-Para adicionar uma nova tarefa, digite o texto da tarefa no campo de entrada e pressione Enter ou clique no botão "Adicionar Tarefa". Para marcar uma tarefa como concluída, clique na caixa de seleção ao lado dela. Para remover uma tarefa, clique no botão "Remover" ao lado dela.
-
-### Créditos
-
-Este aplicativo foi criado por [seu nome aqui] como parte do curso de React da [nome do curso/curso online]. Os ícones utilizados no aplicativo foram obtidos em [link para a fonte dos ícones].
+To add a new task, type the task text into the input field click the "Add" button. To mark a task as completed, click the checkbox next to it. To remove a task, click the trash button next to it.
