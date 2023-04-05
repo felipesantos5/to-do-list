@@ -1,4 +1,4 @@
-### **To-Do List with React and Styled Components**
+### **`To-Do List with React and Styled Components`**
 
 This is a simple to-do list app created with **React** and **Styled Components**.
 
