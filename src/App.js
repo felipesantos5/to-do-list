@@ -50,18 +50,12 @@ function TodoList(props) {
     !checked ? setXp(xp + 20) : xp !== 0 ? setXp(xp - 20) : setXp(xp - 20);
   };
 
-  const resetXp = () => {
-    setXp(0);
-  };
-
   return (
     <Wrapper>
       <Paper>
         <Title>TO DO LIST</Title>
 
         <div></div>
-        <span>{xp}%</span>
-        <button onClick={() => resetXp(setXp)}></button>
         <Form>
           <input type="text" placeholder="Add a new task" value={task} onChange={(event) => setTask(event.target.value)} />
 
