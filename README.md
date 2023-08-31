@@ -12,4 +12,4 @@ To add a new task, type the task text into the input field click the "Add" butto
 
 ## Deployment
 
-The To-do List application is deployed on [**VERCEL**](https://web-notices.vercel.app/), ensuring a seamless and efficient user experience.
+The To-do List application is deployed on [**VERCEL**](https://to-do-list-felipesantos5.vercel.app/), ensuring a seamless and efficient user experience.
