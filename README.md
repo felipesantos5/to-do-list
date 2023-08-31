@@ -2,6 +2,8 @@
 
 This is a simple to-do list app created with **React** and **Styled Components**.
 
+![Example Image](public/images/toDolist.png)
+
 ### **`How to run`**
 
 To run this app locally, you will need Node.js installed on your machine. Follow the steps below:
