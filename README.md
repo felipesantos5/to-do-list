@@ -2,7 +2,7 @@
 
 This is a simple to-do list app created with **React** and **Styled Components**.
 
-![Example Image](public/images/toDolist.png)
+![Example Image](/src/img/toDolist.png)
 
 ### **`How to run`**
 
